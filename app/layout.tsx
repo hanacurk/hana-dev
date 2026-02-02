@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans } from "next/font/google";
+import { Syne, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const syne = Syne({
@@ -8,8 +8,8 @@ const syne = Syne({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${syne.variable} ${dmSans.variable} font-sans antialiased`}
+        className={`${syne.variable} ${playfair.variable} font-sans antialiased`}
       >
         {children}
       </body>

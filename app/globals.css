@@ -1,31 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf9f7;
-  --foreground: #1a1a1a;
-  --accent: #e07a5f;
-  --accent-hover: #c96a52;
-  --muted: #6b6b6b;
-  --card: #ffffff;
-  --card-border: #e8e6e3;
+  --background: #f5f0eb;
+  --foreground: #1c1917;
+  --accent: #c45c3e;
+  --accent-2: #2d5a4a;
+  --accent-3: #8b7355;
+  --muted: #57534e;
+  --card: #fffbf7;
+  --card-border: #e7e2dc;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
-  --font-display: var(--font-syne), system-ui, sans-serif;
+  --font-sans: var(--font-syne), system-ui, sans-serif;
+  --font-display: var(--font-playfair), Georgia, serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0f0f0f;
-    --foreground: #f5f5f5;
+    --background: #141210;
+    --foreground: #faf5f0;
     --accent: #e07a5f;
-    --accent-hover: #ed9b85;
-    --muted: #a3a3a3;
-    --card: #1a1a1a;
-    --card-border: #2a2a2a;
+    --accent-2: #4a7c6c;
+    --accent-3: #a68b6d;
+    --muted: #a8a29e;
+    --card: #1c1917;
+    --card-border: #2d2a27;
   }
 }
 
@@ -39,17 +41,44 @@ body {
   font-family: var(--font-display);
 }
 
-/* Subtle gradient mesh background */
+/* Artsy gradient mesh - organic, painterly */
 .gradient-mesh {
   background: 
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(224, 122, 95, 0.15), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(129, 178, 154, 0.08), transparent),
-    radial-gradient(ellipse 50% 30% at 0% 80%, rgba(61, 64, 91, 0.06), transparent);
+    radial-gradient(ellipse 120% 80% at 20% 10%, rgba(196, 92, 62, 0.12), transparent 50%),
+    radial-gradient(ellipse 80% 120% at 90% 30%, rgba(45, 90, 74, 0.08), transparent 50%),
+    radial-gradient(ellipse 100% 60% at 50% 90%, rgba(139, 115, 85, 0.1), transparent 50%),
+    var(--background);
 }
 
 .dark .gradient-mesh {
   background: 
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(224, 122, 95, 0.08), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(129, 178, 154, 0.04), transparent),
-    radial-gradient(ellipse 50% 30% at 0% 80%, rgba(61, 64, 91, 0.08), transparent);
+    radial-gradient(ellipse 120% 80% at 20% 10%, rgba(224, 122, 95, 0.06), transparent 50%),
+    radial-gradient(ellipse 80% 120% at 90% 30%, rgba(74, 124, 108, 0.05), transparent 50%),
+    radial-gradient(ellipse 100% 60% at 50% 90%, rgba(166, 139, 109, 0.04), transparent 50%),
+    var(--background);
+}
+
+/* Handwritten / brush stroke effect */
+.text-stroke {
+  -webkit-text-stroke: 1px currentColor;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Artistic tilt */
+.art-tilt {
+  transform: rotate(-1.5deg);
+}
+
+.art-tilt-alt {
+  transform: rotate(2deg);
+}
+
+/* Organic blob shape */
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(10px, -10px) scale(1.02); }
+}
+
+.blob-float {
+  animation: float 8s ease-in-out infinite;
 }
