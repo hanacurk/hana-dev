@@ -1,31 +1,45 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  SwiftIllustration,
+  FlutterIllustration,
+  UnityIllustration,
+  WebIllustration,
+  MoonDecoration,
+  SparkleDecoration,
+  BlobDecoration,
+  SwiftIcon,
+  FlutterIcon,
+  UnityIcon,
+  WebIcon,
+} from "./components/illustrations";
 
 export default function Home() {
   return (
-    <div className="min-h-screen gradient-mesh">
+
+    <div className="min-h-screen gradient-mesh overflow-x-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--card-border)]/50 bg-[var(--background)]/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-          <span className="font-display text-lg font-semibold tracking-tight">
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-5">
+          <span className="font-display text-xl font-bold tracking-tight">
             Hana Curk
           </span>
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-10">
             <a
               href="#about"
-              className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--foreground)]"
+              className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
             >
               About
             </a>
             <a
               href="#skills"
-              className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--foreground)]"
+              className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
             >
               Skills
             </a>
             <a
               href="#contact"
-              className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--foreground)]"
+              className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
             >
               Contact
             </a>
@@ -33,56 +47,85 @@ export default function Home() {
               href="/CV-Hana-Curk.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--accent-hover)]"
+              className="rounded-full bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:opacity-90 hover:scale-105"
             >
               Download CV
             </Link>
           </div>
         </div>
       </nav>
+              {/* Cute blob ornaments - positioned in this section */}
+              <div className="pointer-events-none absolute inset-0 z-0">
+          <div className="blob-float absolute -left-20 top-[160%] h-80 w-80 rounded-full bg-[var(--accent)]/40 blur-2xl" />
+          <div className="absolute -right-20 top-[110%] h-96 w-96 rounded-full bg-[var(--accent-2)]/35 blur-2xl" />
+          <div className="absolute -left-10 top-[90%] h-72 w-72 rounded-full bg-[var(--accent-3)]/35 blur-2xl" />
+        </div>
 
-      {/* Hero */}
-      <section className="flex min-h-screen flex-col items-center justify-center px-6 pt-20">
-        <div className="mx-auto flex max-w-5xl flex-col items-center gap-12 lg:flex-row lg:gap-16">
-          <div className="relative order-2 lg:order-1 lg:flex-1">
-            <div className="relative mx-auto aspect-square max-w-[320px] overflow-hidden rounded-2xl shadow-2xl ring-1 ring-[var(--card-border)] lg:max-w-[400px]">
-              <Image
-                src="/cv-image.png"
-                alt="Hana Curk - Mobile and Frontend Developer"
-                fill
-                priority
-                sizes="(max-width: 1024px) 320px, 400px"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity hover:opacity-100" />
+      {/* Hero - decorative illustrations only in this section, scroll away with it */}
+      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-8 pt-24">
+        {/* Decorative illustrations - fixed, stay in viewport top; only visible when hero is on screen */}
+        <div className="pointer-events-none absolute inset-0 z-0">
+          <div className="absolute float-slow right-16 top-32 text-[var(--accent)]">
+            <SparkleDecoration />
+          </div>
+          <div className="absolute float-slow right-24 top-44 text-[var(--accent)]">
+            <SparkleDecoration />
+          </div>
+          <div className="absolute bottom-32 left-12 text-[var(--accent-2)]">
+            <MoonDecoration />
+          </div>
+          <div className="absolute float-slow left-20 top-1/3 text-[var(--accent-3)]">
+            <BlobDecoration />
+          </div>
+        </div>
+
+        <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-16 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
+          {/* Photo - polaroid style */}
+          <div className="relative order-2 lg:order-1">
+            <div className="art-tilt relative">
+              <div className="relative overflow-hidden rounded-2xl bg-[var(--card)] p-4 pb-16 shadow-xl ring-1 ring-[var(--card-border)]">
+                <div className="relative aspect-[4/5] w-[200px] overflow-hidden rounded-lg sm:w-[240px] lg:w-[280px]">
+                  <Image
+                    src="/cv-image.png"
+                    alt="Hana Curk"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 240px, 280px"
+                    className="object-cover"
+                  />
+                </div>
+                <p className="absolute bottom-4 left-4 right-4 font-display text-sm italic text-[var(--muted)]">
+                  mobile & frontend dev
+                </p>
+              </div>
             </div>
-            {/* Decorative blob */}
-            <div className="absolute -bottom-4 -right-4 -z-10 h-32 w-32 rounded-full bg-[var(--accent)]/20 blur-3xl" />
           </div>
 
-          <div className="order-1 flex flex-1 flex-col items-center text-center lg:order-2 lg:items-start lg:text-left">
-            <p className="mb-4 text-sm font-medium uppercase tracking-widest text-[var(--accent)]">
-              Mobile & Frontend Developer
+          {/* Text block */}
+          <div className="order-1 flex max-w-2xl flex-col lg:order-2 lg:max-w-xl">
+            <p className="font-display text-sm font-medium text-[var(--accent)]">
+              hello, I&apos;m
             </p>
-            <h1 className="font-display text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl">
-              Hi, I&apos;m{" "}
-              <span className="text-[var(--accent)]">Hana</span>
+            <h1 className="mt-2 font-display text-6xl font-bold leading-[1.05] tracking-tight sm:text-7xl lg:text-8xl">
+              Hana
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[var(--muted)] sm:text-xl">
-              I build clean, intuitive apps using SwiftUI, Flutter, Unity, and
-              modern web technologies. Focused on creating experiences that feel
-              effortless.
+            <p className="mt-6 font-display text-2xl font-semibold text-[var(--muted)] sm:text-3xl">
+              I build clean, intuitive apps
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+            <p className="mt-4 text-lg leading-relaxed text-[var(--muted)]">
+              SwiftUI, Flutter, Unity & modern web. Creating experiences that
+              feel effortless.
+            </p>
+            <div className="mt-12 flex flex-wrap gap-4">
               <Link
                 href="/CV-Hana-Curk.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-6 py-3.5 font-semibold text-white transition-all hover:bg-[var(--accent-hover)] hover:scale-[1.02]"
+                className="group inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-7 py-3.5 font-semibold text-white shadow-lg transition-all hover:opacity-90 hover:scale-105"
               >
-                View my CV
+                View CV
                 <svg
-                  className="h-4 w-4"
+                  className="h-4 w-4 transition-transform group-hover:translate-x-1"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -91,13 +134,13 @@ export default function Home() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
               </Link>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--card-border)] px-6 py-3.5 font-semibold transition-all hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--card-border)] bg-[var(--card)] px-7 py-3.5 font-semibold transition-all hover:border-[var(--accent)] hover:text-[var(--accent)]"
               >
                 Get in touch
               </a>
@@ -109,95 +152,123 @@ export default function Home() {
       {/* About */}
       <section
         id="about"
-        className="border-t border-[var(--card-border)] px-6 py-24"
+        className="relative overflow-hidden border-t border-[var(--card-border)] px-8 py-28"
       >
-        <div className="mx-auto max-w-3xl">
-          <h2 className="font-display text-3xl font-bold sm:text-4xl">
-            About me
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-[var(--muted)]">
-            I&apos;m a mobile and frontend developer passionate about crafting
-            apps that users love. Whether it&apos;s a native iOS experience with
-            SwiftUI, a cross-platform app with Flutter, an interactive game in
-            Unity, or a polished web interface—I bring a focus on clean code,
-            thoughtful UX, and attention to detail.
-          </p>
-          <p className="mt-4 text-lg leading-relaxed text-[var(--muted)]">
-            I believe great software should feel invisible: intuitive, fast, and
-            a joy to use. That&apos;s what I strive for in every project.
-          </p>
-        </div>
-      </section>
 
-      {/* Skills */}
-      <section
-        id="skills"
-        className="border-t border-[var(--card-border)] px-6 py-24"
-      >
-        <div className="mx-auto max-w-5xl">
-          <h2 className="font-display text-3xl font-bold sm:text-4xl">
-            Technologies
-          </h2>
-          <p className="mt-2 text-lg text-[var(--muted)]">
-            Tools and frameworks I work with
+        <div className="relative z-10 mx-auto max-w-4xl">
+          <p className="font-display text-sm font-medium text-[var(--accent)]">
+            about
           </p>
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                title: "SwiftUI",
-                desc: "Native iOS development",
-                icon: "🍎",
-              },
-              {
-                title: "Flutter",
-                desc: "Cross-platform mobile",
-                icon: "💙",
-              },
-              {
-                title: "Unity",
-                desc: "Games & interactive 3D",
-                icon: "🎮",
-              },
-              {
-                title: "Web",
-                desc: "React, Next.js & modern JS",
-                icon: "🌐",
-              },
-            ].map((skill) => (
-              <div
-                key={skill.title}
-                className="group rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-6 transition-all hover:border-[var(--accent)]/50 hover:shadow-lg"
-              >
-                <span className="text-3xl">{skill.icon}</span>
-                <h3 className="mt-4 font-display text-xl font-semibold">
-                  {skill.title}
-                </h3>
-                <p className="mt-1 text-sm text-[var(--muted)]">{skill.desc}</p>
-              </div>
-            ))}
+          <h2 className="mt-2 font-display text-4xl font-bold sm:text-5xl">
+            Crafting apps people love
+          </h2>
+          <div className="mt-12 grid gap-12 sm:grid-cols-2">
+            <p className="text-lg leading-relaxed text-[var(--muted)]">
+              I&apos;m a mobile and frontend developer passionate about apps that
+              feel right. Native iOS with SwiftUI, cross-platform with Flutter,
+              interactive experiences in Unity, or polished web interfaces—each
+              gets clean code and thoughtful UX.
+            </p>
+            <p className="text-lg leading-relaxed text-[var(--muted)]">
+              Great software should feel invisible: intuitive, fast, a joy to
+              use. That&apos;s what I chase in every project.
+            </p>
           </div>
         </div>
       </section>
 
+{/* Skills */}
+<section
+  id="skills"
+  className="relative border-t border-[var(--card-border)] px-8 py-28"
+>
+  <div className="relative z-10 mx-auto max-w-5xl">
+    <p className="font-display text-sm font-medium text-[var(--accent)]">
+      tools
+    </p>
+    <h2 className="mt-2 font-display text-4xl font-bold sm:text-5xl">
+      Technologies
+    </h2>
+    <div className="mx-auto mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {[
+        {
+          title: "Swift",
+          desc: "Native iOS",
+          Illustration: SwiftIcon,
+          tilt: "",
+          color: "var(--accent)",
+        }
+        ,
+        {
+          title: "Flutter",
+          desc: "Cross-platform",
+          Illustration: FlutterIcon,
+          tilt: "art-tilt",
+          color: "var(--accent-2)",
+        },
+        {
+          title: "Unity",
+          desc: "Cross-platform & Games",
+          Illustration: UnityIcon,
+          tilt: "art-tilt-alt",
+          color: "var(--accent-3)",
+        },
+        {
+          title: "Web",
+          desc: "React, Next.js",
+          Illustration: WebIcon,
+          tilt: "",
+          color: "var(--accent)",
+        },
+      ].map((skill) => (
+        <div
+          key={skill.title}
+          style={{ borderColor: skill.color }} 
+          className={`
+            group relative 
+            rounded-3xl border-2 border-[var(--${skill.color})]
+            bg-[var(--card)] p-8 
+            transition-all duration-500 ease-out hover:shadow-xl
+            hover:border-[var(--${skill.color})]/50
+            hover:-rotate-3 hover:translate-y-2
+            ${skill.tilt}
+          `}
+        >
+          <div style={{ color: skill.color }}>
+            <skill.Illustration />
+          </div>
+          <h3 className="mt-6 font-display text-2xl font-bold">
+            {skill.title}
+          </h3>
+          <p className="mt-2 text-sm text-[var(--muted)]">{skill.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
       {/* Contact */}
       <section
         id="contact"
-        className="border-t border-[var(--card-border)] px-6 py-24"
+        className="relative border-t border-[var(--card-border)] px-8 py-28"
       >
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-3xl font-bold sm:text-4xl">
-            Let&apos;s connect
-          </h2>
-          <p className="mt-4 text-lg text-[var(--muted)]">
-            Open to new opportunities and interesting projects. Feel free to
-            reach out.
+        <div className="relative z-10 mx-auto max-w-3xl text-center">
+          <p className="font-display text-sm font-medium text-[var(--accent)]">
+            let&apos;s talk
           </p>
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
+          <h2 className="mt-2 font-display text-4xl font-bold sm:text-5xl">
+            Connect
+          </h2>
+          <p className="mt-6 text-lg text-[var(--muted)]">
+            Open to new opportunities and interesting projects.
+          </p>
+          <div className="mt-14 flex flex-wrap items-center justify-center gap-6">
             <Link
               href="/CV-Hana-Curk.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full bg-[var(--accent)] px-6 py-3 font-semibold text-white transition-colors hover:bg-[var(--accent-hover)]"
+              className="flex items-center gap-2 rounded-full bg-[var(--accent)] px-8 py-4 font-semibold text-white shadow-lg transition-all hover:opacity-90 hover:scale-105"
             >
               <svg
                 className="h-5 w-5"
@@ -216,7 +287,7 @@ export default function Home() {
             </Link>
             <a
               href="mailto:hello@hanacurk.com"
-              className="flex items-center gap-2 rounded-full border-2 border-[var(--card-border)] px-6 py-3 font-semibold transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              className="flex items-center gap-2 rounded-full border-2 border-[var(--card-border)] bg-[var(--card)] px-8 py-4 font-semibold transition-all hover:border-[var(--accent)] hover:text-[var(--accent)]"
             >
               <svg
                 className="h-5 w-5"
@@ -238,12 +309,12 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-[var(--card-border)] px-6 py-8">
-        <div className="mx-auto flex max-w-5xl items-center justify-between">
+      <footer className="border-t border-[var(--card-border)] px-8 py-10">
+        <div className="relative z-10 mx-auto flex max-w-6xl items-center justify-between">
           <span className="font-display text-sm font-medium text-[var(--muted)]">
             © {new Date().getFullYear()} Hana Curk
           </span>
-          <div className="flex gap-6">
+          <div className="flex gap-8">
             <a
               href="#"
               className="text-sm text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
