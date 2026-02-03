@@ -1,34 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f5f0eb;
-  --foreground: #1c1917;
-  --accent: #c45c3e;
-  --accent-2: #2d5a4a;
-  --accent-3: #8b7355;
-  --muted: #57534e;
-  --card: #fffbf7;
-  --card-border: #e7e2dc;
+  --background: #fef9f5;
+  --foreground: #3d3430;
+  --accent: #e8a598;
+  --accent-2: #9ec9b8;
+  --accent-3: #c9b8e8;
+  --muted: #7d7570;
+  --card: #fffdfb;
+  --card-border: #f0e8e2;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-syne), system-ui, sans-serif;
-  --font-display: var(--font-playfair), Georgia, serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #141210;
-    --foreground: #faf5f0;
-    --accent: #e07a5f;
-    --accent-2: #4a7c6c;
-    --accent-3: #a68b6d;
-    --muted: #a8a29e;
-    --card: #1c1917;
-    --card-border: #2d2a27;
-  }
+  --font-sans: var(--font-nunito), system-ui, sans-serif;
+  --font-display: var(--font-nunito), system-ui, sans-serif;
 }
 
 body {
@@ -41,27 +28,13 @@ body {
   font-family: var(--font-display);
 }
 
-/* Artsy gradient mesh - organic, painterly */
+/* Cute gradient mesh */
 .gradient-mesh {
-  background: 
-    radial-gradient(ellipse 120% 80% at 20% 10%, rgba(196, 92, 62, 0.12), transparent 50%),
-    radial-gradient(ellipse 80% 120% at 90% 30%, rgba(45, 90, 74, 0.08), transparent 50%),
-    radial-gradient(ellipse 100% 60% at 50% 90%, rgba(139, 115, 85, 0.1), transparent 50%),
+  background:
+    radial-gradient(ellipse 120% 80% at 20% 10%, rgba(232, 165, 152, 0.2), transparent 50%),
+    radial-gradient(ellipse 80% 120% at 90% 30%, rgba(158, 201, 184, 0.15), transparent 50%),
+    radial-gradient(ellipse 100% 60% at 50% 90%, rgba(201, 184, 232, 0.12), transparent 50%),
     var(--background);
-}
-
-.dark .gradient-mesh {
-  background: 
-    radial-gradient(ellipse 120% 80% at 20% 10%, rgba(224, 122, 95, 0.06), transparent 50%),
-    radial-gradient(ellipse 80% 120% at 90% 30%, rgba(74, 124, 108, 0.05), transparent 50%),
-    radial-gradient(ellipse 100% 60% at 50% 90%, rgba(166, 139, 109, 0.04), transparent 50%),
-    var(--background);
-}
-
-/* Handwritten / brush stroke effect */
-.text-stroke {
-  -webkit-text-stroke: 1px currentColor;
-  -webkit-text-fill-color: transparent;
 }
 
 /* Artistic tilt */
@@ -73,12 +46,19 @@ body {
   transform: rotate(2deg);
 }
 
-/* Organic blob shape */
+/* Float animation */
 @keyframes float {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(10px, -10px) scale(1.02); }
+  50% { transform: translate(8px, -8px) scale(1.02); }
 }
 
 .blob-float {
   animation: float 8s ease-in-out infinite;
+}
+
+.art-tilt:hover {
+  --tw-rotate: 2deg !important;
+}
+.art-tilt-alt:hover {
+  --tw-rotate: -2deg !important;
 }

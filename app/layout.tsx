@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import { Syne, Playfair_Display } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 
-const syne = Syne({
-  variable: "--font-syne",
+const nunito = Nunito({
+  variable: "--font-nunito",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -33,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${syne.variable} ${playfair.variable} font-sans antialiased`}
+        className={`${nunito.variable} font-sans antialiased`}
       >
         {children}
       </body>
