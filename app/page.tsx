@@ -405,14 +405,14 @@ export default function Home() {
           </span>
           <div className="flex gap-8">
             <a
-              href="#"
+              href="https://www.linkedin.com/in/hana-%C4%8Durk-b77a9136/"
               className="text-sm text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
               aria-label="LinkedIn"
             >
               LinkedIn
             </a>
             <a
-              href="#"
+              href="https://github.com/hanacurk"
               className="text-sm text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
               aria-label="GitHub"
             >
