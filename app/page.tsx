@@ -84,14 +84,14 @@ export default function Home() {
           <div className="relative order-2 lg:order-1">
             <div className="art-tilt relative">
               <div className="relative overflow-hidden rounded-2xl bg-[var(--card)] p-4 pb-16 shadow-xl ring-1 ring-[var(--card-border)]">
-                <div className="relative aspect-[4/5] w-[200px] overflow-hidden rounded-lg sm:w-[240px] lg:w-[280px]">
+                <div className="relative aspect-[4/5] w-[200px]  overflow-hidden rounded-lg sm:w-[240px] lg:w-[280px]">
                   <Image
-                    src="/cv-image.png"
+                    src="/cv-image.JPG"
                     alt="Hana Curk"
                     fill
                     priority
                     sizes="(max-width: 1024px) 240px, 280px"
-                    className="object-cover"
+                    className="object-cover scale-120"
                   />
                 </div>
                 <p className="absolute bottom-4 left-4 right-4 font-display text-sm italic text-[var(--muted)]">
