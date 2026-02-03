@@ -22,7 +22,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-5">
           <span className="font-display text-xl font-bold tracking-tight">
-            Hana Curk
+            Hana Čurk
           </span>
           <div className="flex items-center gap-10">
             <a
@@ -56,7 +56,7 @@ export default function Home() {
       </nav>
               {/* Cute blob ornaments - positioned in this section */}
               <div className="pointer-events-none absolute inset-0 z-0">
-          <div className="blob-float absolute -left-20 top-[160%] h-80 w-80 rounded-full bg-[var(--accent)]/40 blur-2xl" />
+          <div className="absolute -left-20 top-[160%] h-80 w-80 rounded-full bg-[var(--accent)]/40 blur-2xl" />
           <div className="absolute -right-20 top-[110%] h-96 w-96 rounded-full bg-[var(--accent-2)]/35 blur-2xl" />
           <div className="absolute -left-10 top-[90%] h-72 w-72 rounded-full bg-[var(--accent-3)]/35 blur-2xl" />
         </div>
@@ -65,16 +65,16 @@ export default function Home() {
       <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-8 pt-24">
         {/* Decorative illustrations - fixed, stay in viewport top; only visible when hero is on screen */}
         <div className="pointer-events-none absolute inset-0 z-0">
-          <div className="absolute float-slow right-16 top-32 text-[var(--accent)]">
+          <div className="absolute right-16 top-32 text-[var(--accent)]">
             <SparkleDecoration />
           </div>
-          <div className="absolute float-slow right-24 top-44 text-[var(--accent)]">
+          <div className="absolute right-24 top-44 text-[var(--accent)]">
             <SparkleDecoration />
           </div>
           <div className="absolute bottom-32 left-12 text-[var(--accent-2)]">
             <MoonDecoration />
           </div>
-          <div className="absolute float-slow left-20 top-1/3 text-[var(--accent-3)]">
+          <div className="absolute left-20 top-1/3 text-[var(--accent-3)]">
             <BlobDecoration />
           </div>
         </div>
@@ -113,8 +113,7 @@ export default function Home() {
               I build clean, intuitive apps
             </p>
             <p className="mt-4 text-lg leading-relaxed text-[var(--muted)]">
-              SwiftUI, Flutter, Unity & modern web. Creating experiences that
-              feel effortless.
+              Swift, Flutter, Unity & modern web.
             </p>
             <div className="mt-12 flex flex-wrap gap-4">
               <Link
@@ -228,9 +227,8 @@ export default function Home() {
             group relative 
             rounded-3xl border-2 border-[var(--${skill.color})]
             bg-[var(--card)] p-8 
-            transition-all duration-500 ease-out hover:shadow-xl
+            transition-all duration-500 ease-out
             hover:border-[var(--${skill.color})]/50
-            hover:-rotate-3 hover:translate-y-2
             ${skill.tilt}
           `}
         >
@@ -312,7 +310,7 @@ export default function Home() {
       <footer className="border-t border-[var(--card-border)] px-8 py-10">
         <div className="relative z-10 mx-auto flex max-w-6xl items-center justify-between">
           <span className="font-display text-sm font-medium text-[var(--muted)]">
-            © {new Date().getFullYear()} Hana Curk
+            © {new Date().getFullYear()} Hana Čurk
           </span>
           <div className="flex gap-8">
             <a
