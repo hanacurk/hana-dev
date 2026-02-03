@@ -78,3 +78,36 @@ body {
 .float-slow {
   animation: floatSlow 8s ease-in-out infinite;
 }
+
+/* Mobile menu animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mobile-menu-enter {
+  animation: slideDown 0.25s ease-out forwards;
+}
+
+.mobile-menu-link {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.mobile-menu-link:nth-child(1) { animation-delay: 0.05s; }
+.mobile-menu-link:nth-child(2) { animation-delay: 0.1s; }
+.mobile-menu-link:nth-child(3) { animation-delay: 0.15s; }

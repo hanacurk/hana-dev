@@ -83,61 +83,66 @@ export default function Home() {
           <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center rounded-lg p-2 text-black/70 hover:bg-black/5 hover:text-black sm:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--card)] border border-[var(--card-border)] text-[var(--muted)] transition-all duration-200 hover:bg-[var(--accent)]/10 hover:text-[var(--accent)] hover:border-[var(--accent)]/30 active:scale-95 sm:hidden"
               aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
+              <span className="relative flex h-5 w-6 flex-col items-center justify-center gap-1.5">
+                <span
+                  className={`block h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
+                    mobileMenuOpen ? "translate-y-2 rotate-45" : ""
+                  }`}
+                />
+                <span
+                  className={`block h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
+                    mobileMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+                  }`}
+                />
+                <span
+                  className={`block h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
+                    mobileMenuOpen ? "-translate-y-2 -rotate-45" : ""
+                  }`}
+                />
+              </span>
             </button>
         </div>
                 {/* Mobile menu */}
                 {mobileMenuOpen && (
-          <div className="border-t border-black/5 bg-[color:var(--background)]/95 backdrop-blur sm:hidden">
-            <nav className="flex flex-col items-center justify-center gap-1 px-6 py-4">
+          <div className="mobile-menu-enter border-t border-[var(--card-border)] bg-[var(--card)]/98 shadow-lg sm:hidden">
+            <nav className="flex flex-col gap-1 px-4 py-5">
               <a
                 href="#about"
                 onClick={() => setMobileMenuOpen(false)}
-                className="rounded-lg px-4 py-3 text-sm font-medium text-black/70 transition hover:bg-black/5 hover:text-black"
+                className="mobile-menu-link rounded-xl px-5 py-3.5 text-base font-semibold text-[var(--muted)] transition-all duration-200 hover:bg-[var(--accent)]/10 hover:text-[var(--accent)] active:scale-[0.98]"
               >
                 About
               </a>
               <a
                 href="#skills"
                 onClick={() => setMobileMenuOpen(false)}
-                className="rounded-lg px-4 py-3 text-sm font-medium text-black/70 transition hover:bg-black/5 hover:text-black"
+                className="mobile-menu-link rounded-xl px-5 py-3.5 text-base font-semibold text-[var(--muted)] transition-all duration-200 hover:bg-[var(--accent)]/10 hover:text-[var(--accent)] active:scale-[0.98]"
               >
                 Skills
               </a>
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="rounded-lg px-4 py-3 text-sm font-medium text-black/70 transition hover:bg-black/5 hover:text-black"
+                className="mobile-menu-link rounded-xl px-5 py-3.5 text-base font-semibold text-[var(--muted)] transition-all duration-200 hover:bg-[var(--accent)]/10 hover:text-[var(--accent)] active:scale-[0.98]"
               >
                 Contact
               </a>
+              <Link
+                href="/CV-Hana-Curk.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="mobile-menu-link mt-2 flex items-center justify-center gap-2 rounded-xl bg-[var(--accent)] px-5 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:opacity-90 active:scale-[0.98]"
+              >
+                View CV
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </Link>
             </nav>
           </div>
         )}
@@ -160,12 +165,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-10 sm:gap-16 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
-          {/* Photo - polaroid style */}
-          <div className="relative order-2 lg:order-1">
+        <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-8 sm:gap-16 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
+          {/* Photo - polaroid style, first on mobile */}
+          <div className="relative order-1 lg:order-1">
             <div className="art-tilt relative">
               <div className="relative overflow-hidden rounded-2xl bg-[var(--card)] p-4 pb-16 shadow-xl ring-1 ring-[var(--card-border)]">
-                <div className="relative aspect-[4/5] w-[180px] overflow-hidden rounded-lg sm:w-[240px] lg:w-[280px]">
+                <div className="relative aspect-[4/5] w-[200px] overflow-hidden rounded-lg sm:w-[240px] lg:w-[280px]">
                   <Image
                     src="/cv-image.JPG"
                     alt="Hana Curk"
@@ -182,8 +187,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Text block */}
-          <div className="order-1 flex max-w-2xl flex-col lg:order-2 lg:max-w-xl">
+          {/* Text block - second on mobile */}
+          <div className="order-2 flex max-w-2xl flex-col text-center sm:text-left lg:order-2 lg:max-w-xl">
             <p className="font-display text-sm font-medium text-[var(--accent)]">
               hello, I&apos;m
             </p>
@@ -196,7 +201,7 @@ export default function Home() {
             <p className="mt-4 text-lg leading-relaxed text-[var(--muted)]">
               Swift, Flutter, Unity & modern web.
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-12 sm:justify-start sm:gap-4">
+            <div className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-12 sm:justify-start sm:gap-4 lg:justify-start">
               <Link
                 href="/CV-Hana-Curk.pdf"
                 target="_blank"
