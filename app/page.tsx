@@ -45,14 +45,14 @@ export default function Home() {
   }, [mobileMenuOpen]);
 
   return (
-<div className="min-h-screen gradient-mesh overflow-x-hidden w-full max-w-full">
+<div className="min-h-screen w-full overflow-x-clip gradient-mesh">
 {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-5">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-8 sm:py-5">
           <span className="font-display text-xl font-bold tracking-tight">
             Hana Čurk
           </span>
-          <div className="hidden flex items-center gap-10 sm:flex">
+          <div className="hidden items-center gap-10 sm:flex">
             <a
               href="#about"
               className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
@@ -116,7 +116,7 @@ export default function Home() {
                 {/* Mobile menu */}
                 {mobileMenuOpen && (
           <div className="border-t border-black/5 bg-[color:var(--background)]/95 backdrop-blur sm:hidden">
-            <nav className="container-pad items-center justify-center flex flex-col gap-1 py-4">
+            <nav className="flex flex-col items-center justify-center gap-1 px-6 py-4">
               <a
                 href="#about"
                 onClick={() => setMobileMenuOpen(false)}
@@ -142,15 +142,8 @@ export default function Home() {
           </div>
         )}
       </nav>
-              {/* Cute blob ornaments - positioned in this section */}
-        <div className="pointer-events-none absolute inset-0 z-0 hidden sm:block">
-          <div className="absolute -left-20 top-[160%] h-80 w-80 rounded-full bg-[var(--accent)]/40 blur-2xl" />
-          <div className="absolute -right-20 top-[110%] h-96 w-96 rounded-full bg-[var(--accent-2)]/35 blur-2xl" />
-          <div className="absolute -left-10 top-[90%] h-72 w-72 rounded-full bg-[var(--accent-3)]/35 blur-2xl" />
-        </div>
-
       {/* Hero - decorative illustrations only in this section, scroll away with it */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-8 pt-24">
+      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pt-20 sm:px-8 sm:pt-24">
         {/* Decorative illustrations - fixed, stay in viewport top; only visible when hero is on screen */}
         <div className="pointer-events-none absolute inset-0 z-0">
           <div className="absolute right-16 top-32 text-[var(--accent)]">
@@ -167,12 +160,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-16 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
+        <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-10 sm:gap-16 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
           {/* Photo - polaroid style */}
           <div className="relative order-2 lg:order-1">
             <div className="art-tilt relative">
               <div className="relative overflow-hidden rounded-2xl bg-[var(--card)] p-4 pb-16 shadow-xl ring-1 ring-[var(--card-border)]">
-                <div className="relative aspect-[4/5] w-[200px]  overflow-hidden rounded-lg sm:w-[240px] lg:w-[280px]">
+                <div className="relative aspect-[4/5] w-[180px] overflow-hidden rounded-lg sm:w-[240px] lg:w-[280px]">
                   <Image
                     src="/cv-image.JPG"
                     alt="Hana Curk"
@@ -194,21 +187,21 @@ export default function Home() {
             <p className="font-display text-sm font-medium text-[var(--accent)]">
               hello, I&apos;m
             </p>
-            <h1 className="mt-2 font-display text-6xl font-bold leading-[1.05] tracking-tight sm:text-7xl lg:text-8xl">
+            <h1 className="mt-2 font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl">
               Hana
             </h1>
-            <p className="mt-6 font-display text-2xl font-semibold text-[var(--muted)] sm:text-3xl">
+            <p className="mt-4 font-display text-xl font-semibold text-[var(--muted)] sm:mt-6 sm:text-2xl lg:text-3xl">
               I build clean, intuitive apps
             </p>
             <p className="mt-4 text-lg leading-relaxed text-[var(--muted)]">
               Swift, Flutter, Unity & modern web.
             </p>
-            <div className="mt-12 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-12 sm:justify-start sm:gap-4">
               <Link
                 href="/CV-Hana-Curk.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-7 py-3.5 font-semibold text-white shadow-lg transition-all hover:opacity-90 hover:scale-105"
+                className="group inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-5 py-3 font-semibold text-white shadow-lg transition-all hover:opacity-90 hover:scale-105 sm:px-7 sm:py-3.5"
               >
                 View CV
                 <svg
@@ -227,7 +220,7 @@ export default function Home() {
               </Link>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--card-border)] bg-[var(--card)] px-7 py-3.5 font-semibold transition-all hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-[var(--card-border)] bg-[var(--card)] px-5 py-3 font-semibold transition-all hover:border-[var(--accent)] hover:text-[var(--accent)] sm:px-7 sm:py-3.5"
               >
                 Get in touch
               </a>
@@ -236,20 +229,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About */}
+      {/* About - blobs fixed to this section, scroll away with it */}
       <section
         id="about"
-        className="relative overflow-hidden border-t border-[var(--card-border)] px-8 py-28"
+        className="relative overflow-hidden border-t border-[var(--card-border)] px-4 py-16 sm:px-8 sm:py-28"
       >
-
+        {/* Blobs positioned in this section - scroll with content */}
+        <div className="pointer-events-none absolute inset-0 z-0 hidden overflow-hidden sm:block">
+          <div className="absolute -left-20 top-[5%] h-40 w-40 rounded-full bg-[var(--accent)]/40 blur-2xl" />
+          <div className="absolute -right-20 top-[10%] h-96 w-96 rounded-full bg-[var(--accent-2)]/35 blur-2xl" />
+          <div className="absolute -left-10 bottom-[5%] h-72 w-72 rounded-full bg-[var(--accent-3)]/35 blur-2xl" />
+        </div>
         <div className="relative z-10 mx-auto max-w-4xl">
           <p className="font-display text-sm font-medium text-[var(--accent)]">
             about
           </p>
-          <h2 className="mt-2 font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="mt-2 font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             Crafting apps people love
           </h2>
-          <div className="mt-12 grid gap-12 sm:grid-cols-2">
+          <div className="mt-8 grid gap-8 sm:mt-12 sm:gap-12 sm:grid-cols-2">
             <p className="text-lg leading-relaxed text-[var(--muted)]">
               I&apos;m a mobile and frontend developer passionate about apps that
               feel right. Native iOS with SwiftUI, cross-platform with Flutter,
@@ -267,16 +265,16 @@ export default function Home() {
 {/* Skills */}
 <section
   id="skills"
-  className="relative border-t border-[var(--card-border)] px-8 py-28"
+  className="relative border-t border-[var(--card-border)] px-4 py-16 sm:px-8 sm:py-28"
 >
   <div className="relative z-10 mx-auto max-w-5xl">
     <p className="font-display text-sm font-medium text-[var(--accent)]">
       tools
     </p>
-    <h2 className="mt-2 font-display text-4xl font-bold sm:text-5xl">
+    <h2 className="mt-2 font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
       Technologies
     </h2>
-    <div className="mx-auto mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="mx-auto mt-10 grid gap-4 sm:mt-16 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {[
         {
           title: "Swift",
@@ -323,7 +321,7 @@ export default function Home() {
           <div style={{ color: skill.color }}>
             <skill.Illustration />
           </div>
-          <h3 className="mt-6 font-display text-2xl font-bold">
+          <h3 className="mt-4 font-display text-xl font-bold sm:mt-6 sm:text-2xl">
             {skill.title}
           </h3>
           <p className="mt-2 text-sm text-[var(--muted)]">{skill.desc}</p>
@@ -337,19 +335,19 @@ export default function Home() {
       {/* Contact */}
       <section
         id="contact"
-        className="relative border-t border-[var(--card-border)] px-8 py-28"
+        className="relative border-t border-[var(--card-border)] px-4 py-16 sm:px-8 sm:py-28"
       >
         <div className="relative z-10 mx-auto max-w-3xl text-center">
           <p className="font-display text-sm font-medium text-[var(--accent)]">
             let&apos;s talk
           </p>
-          <h2 className="mt-2 font-display text-4xl font-bold sm:text-5xl">
+          <h2 className="mt-2 font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
             Connect
           </h2>
-          <p className="mt-6 text-lg text-[var(--muted)]">
+          <p className="mt-4 text-base text-[var(--muted)] sm:mt-6 sm:text-lg">
             Open to new opportunities and interesting projects.
           </p>
-          <div className="mt-14 flex flex-wrap items-center justify-center gap-6">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:mt-14 sm:gap-6">
             <Link
               href="/CV-Hana-Curk.pdf"
               target="_blank"
@@ -395,8 +393,8 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-[var(--card-border)] px-8 py-10">
-        <div className="relative z-10 mx-auto flex max-w-6xl items-center justify-between">
+      <footer className="border-t border-[var(--card-border)] px-4 py-8 sm:px-8 sm:py-10">
+        <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
           <span className="font-display text-sm font-medium text-[var(--muted)]">
             © {new Date().getFullYear()} Hana Čurk
           </span>

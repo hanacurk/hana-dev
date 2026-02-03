@@ -25,9 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth overflow-x-hidden">
       <body
-        className={`${nunito.variable} font-sans antialiased`}
+        className={`${nunito.variable} font-sans antialiased overflow-x-hidden`}
       >
         {children}
       </body>
