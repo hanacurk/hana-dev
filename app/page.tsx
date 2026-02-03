@@ -16,7 +16,7 @@ import {
 
 export default function Home() {
   return (
-    
+
     <div className="min-h-screen gradient-mesh overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-xl">
@@ -65,16 +65,16 @@ export default function Home() {
       <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-8 pt-24">
         {/* Decorative illustrations - fixed, stay in viewport top; only visible when hero is on screen */}
         <div className="pointer-events-none absolute inset-0 z-0">
-          <div className="absolute right-16 top-32 text-[var(--accent)]">
+          <div className="absolute float-slow right-16 top-32 text-[var(--accent)]">
             <SparkleDecoration />
           </div>
-          <div className="absolute right-24 top-44 text-[var(--accent)]">
+          <div className="absolute float-slow right-24 top-44 text-[var(--accent)]">
             <SparkleDecoration />
           </div>
           <div className="absolute bottom-32 left-12 text-[var(--accent-2)]">
             <MoonDecoration />
           </div>
-          <div className="absolute left-20 top-1/3 text-[var(--accent-3)]">
+          <div className="absolute float-slow left-20 top-1/3 text-[var(--accent-3)]">
             <BlobDecoration />
           </div>
         </div>
@@ -223,12 +223,13 @@ export default function Home() {
       ].map((skill) => (
         <div
           key={skill.title}
+          style={{ borderColor: skill.color }} 
           className={`
             group relative 
-            rounded-3xl border-2 border-[var(--card-border)] 
+            rounded-3xl border-2 border-[var(--${skill.color})]
             bg-[var(--card)] p-8 
             transition-all duration-500 ease-out hover:shadow-xl
-            hover:border-[var(--accent)]/50
+            hover:border-[var(--${skill.color})]/50
             hover:-rotate-3 hover:translate-y-2
             ${skill.tilt}
           `}
@@ -240,7 +241,6 @@ export default function Home() {
             {skill.title}
           </h3>
           <p className="mt-2 text-sm text-[var(--muted)]">{skill.desc}</p>
-          <div className="absolute right-4 top-4 h-8 w-8 rounded-full border-2 border-[var(--accent)]/30 opacity-0 transition-all duration-300  group-hover:scale-110" />
         </div>
       ))}
     </div>

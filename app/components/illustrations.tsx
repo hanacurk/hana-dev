@@ -1,4 +1,5 @@
 /* Cute SVG illustrations - rounded, friendly style */
+import Image from "next/image";
 
 export function SwiftIllustration({ className = "h-14 w-14" }: { className?: string }) {
   return (
@@ -15,42 +16,37 @@ export function SwiftIllustration({ className = "h-14 w-14" }: { className?: str
   );
 }
 
-// SwiftIcon.tsx - Replace with your downloaded SVG path data
 export function SwiftIcon({ className = "h-14 w-14" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      {"/swift.svg"}
-    </svg>
+    <div className={`${className} filter brightness-0 invert-[0.6] sepia-[0.3] saturate(3) hue-rotate-[200deg]`}>
+      <Image src="/swift.svg" alt="Swift" fill className="object-contain" />
+    </div>
   );
 }
 
-// flutter icon
 export function FlutterIcon({ className = "h-14 w-14" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      {"/flutter.svg"}
-    </svg>
+    <div className={`${className} filter brightness-0 invert-[0.4] sepia-[0.4] saturate(4) hue-rotate-[120deg]`}>
+      <Image src="/flutter.svg" alt="Flutter" fill className="object-contain" />
+    </div>
   );
 }
 
-// unity icon
 export function UnityIcon({ className = "h-14 w-14" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      {"/unity.svg"}
-    </svg>
+    <div className={`${className} filter brightness-0 invert-[0.7] sepia-[0.2] saturate(2) hue-rotate-[280deg]`}>
+      <Image src="/unity.svg" alt="Unity" fill className="object-contain" />
+    </div>
   );
 }
 
-// web icon
 export function WebIcon({ className = "h-14 w-14" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      {"/web.svg"}
-    </svg>
+    <div className={`${className} filter brightness-0 invert-[0.5] sepia-[0.5] saturate(3) hue-rotate-[160deg]`}>
+      <Image src="/nextjs.svg" alt="Web" fill className="object-contain" />
+    </div>
   );
 }
-
 
 export function FlutterIllustration({ className = "h-14 w-14" }: { className?: string }) {
   return (

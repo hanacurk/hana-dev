@@ -62,3 +62,13 @@ body {
 .art-tilt-alt:hover {
   --tw-rotate: -2deg !important;
 }
+
+@keyframes floatSlow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
