@@ -1,10 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+
 import {
-  SwiftIllustration,
-  FlutterIllustration,
-  UnityIllustration,
-  WebIllustration,
   MoonDecoration,
   SparkleDecoration,
   BlobDecoration,
@@ -14,17 +13,46 @@ import {
   WebIcon,
 } from "./components/illustrations";
 
-export default function Home() {
-  return (
+import { useEffect, useState } from "react";
 
-    <div className="min-h-screen gradient-mesh overflow-x-hidden">
-      {/* Navigation */}
+export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 640) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        mobileMenuOpen &&
+        !target.closest("header") &&
+        !target.closest("nav")
+      ) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
+
+  return (
+<div className="min-h-screen gradient-mesh overflow-x-hidden w-full max-w-full">
+{/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-5">
           <span className="font-display text-xl font-bold tracking-tight">
             Hana Čurk
           </span>
-          <div className="flex items-center gap-10">
+          <div className="hidden flex items-center gap-10 sm:flex">
             <a
               href="#about"
               className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
@@ -52,10 +80,70 @@ export default function Home() {
               Download CV
             </Link>
           </div>
+          <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="inline-flex items-center justify-center rounded-lg p-2 text-black/70 hover:bg-black/5 hover:text-black sm:hidden"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
         </div>
+                {/* Mobile menu */}
+                {mobileMenuOpen && (
+          <div className="border-t border-black/5 bg-[color:var(--background)]/95 backdrop-blur sm:hidden">
+            <nav className="container-pad items-center justify-center flex flex-col gap-1 py-4">
+              <a
+                href="#about"
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-lg px-4 py-3 text-sm font-medium text-black/70 transition hover:bg-black/5 hover:text-black"
+              >
+                About
+              </a>
+              <a
+                href="#skills"
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-lg px-4 py-3 text-sm font-medium text-black/70 transition hover:bg-black/5 hover:text-black"
+              >
+                Skills
+              </a>
+              <a
+                href="#contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-lg px-4 py-3 text-sm font-medium text-black/70 transition hover:bg-black/5 hover:text-black"
+              >
+                Contact
+              </a>
+            </nav>
+          </div>
+        )}
       </nav>
               {/* Cute blob ornaments - positioned in this section */}
-              <div className="pointer-events-none absolute inset-0 z-0">
+        <div className="pointer-events-none absolute inset-0 z-0 hidden sm:block">
           <div className="absolute -left-20 top-[160%] h-80 w-80 rounded-full bg-[var(--accent)]/40 blur-2xl" />
           <div className="absolute -right-20 top-[110%] h-96 w-96 rounded-full bg-[var(--accent-2)]/35 blur-2xl" />
           <div className="absolute -left-10 top-[90%] h-72 w-72 rounded-full bg-[var(--accent-3)]/35 blur-2xl" />
