@@ -12,6 +12,7 @@ import {
   UnityIcon,
   WebIcon,
 } from "./components/illustrations";
+import { AppStoreIcon } from "./components/AppStoreIcon";
 
 import { useEffect, useState } from "react";
 
@@ -71,6 +72,12 @@ export default function Home() {
               className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
             >
               Skills
+            </a>
+            <a
+              href="#projects"
+              className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
+            >
+              Projects
             </a>
             <a
               href="#contact"
@@ -138,6 +145,16 @@ export default function Home() {
                 className="mobile-menu-link rounded-xl px-5 py-3.5 text-base font-semibold text-[var(--muted)] transition-all duration-200 hover:bg-[var(--accent)]/10 hover:text-[var(--accent)] active:scale-[0.98]"
               >
                 Skills
+              </a>
+              <a
+                href="#projects"
+                onClick={(e) => {
+                  scrollToSection(e, "projects");
+                  setMobileMenuOpen(false);
+                }}
+                className="mobile-menu-link rounded-xl px-5 py-3.5 text-base font-semibold text-[var(--muted)] transition-all duration-200 hover:bg-[var(--accent)]/10 hover:text-[var(--accent)] active:scale-[0.98]"
+              >
+                Projects
               </a>
               <a
                 href="#contact"
@@ -351,6 +368,204 @@ export default function Home() {
   </div>
 </section>
 
+      {/* Projects */}
+      <section
+        id="projects"
+        className="relative border-t border-[var(--card-border)] px-4 py-16 sm:px-8 sm:py-28"
+      >
+        <div className="relative z-10 mx-auto max-w-5xl">
+          <p className="font-display text-sm font-medium text-[var(--accent)]">
+            work
+          </p>
+          <h2 className="mt-2 font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
+            Projects
+          </h2>
+          <div className="mt-10 flex flex-col gap-8 sm:mt-16 lg:gap-12">
+            {/* Speech Blubs */}
+            <article
+              style={{ borderColor: "var(--accent)" }}
+              className="rounded-3xl border-2 bg-[var(--card)] p-6 transition-all duration-500 ease-out hover:opacity-95 sm:p-8"
+            >
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
+                <AppStoreIcon
+                  appId="1239522573"
+                  alt="Speech Blubs app icon"
+                  className="h-24 w-24 shrink-0 rounded-[22%] object-cover shadow-md sm:h-28 sm:w-28"
+                />
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-baseline gap-2">
+                    <h3 className="font-display text-2xl font-bold sm:text-3xl">
+                      Speech Blubs
+                    </h3>
+                    <span className="text-sm font-medium text-[var(--muted)]">
+                      iOS App – Swift
+                    </span>
+                  </div>
+                  <p className="mt-2 text-sm text-[var(--muted)]">
+                    Blub Blub
+                  </p>
+                  <a
+                    href="https://apps.apple.com/us/app/speech-blubs-language-therapy/id1239522573"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--accent)] transition-colors hover:underline"
+                  >
+                    View on App Store
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <p className="mt-4 text-lg leading-relaxed text-[var(--muted)]">
+                Speech Blubs is a speech development app for children, designed to support early language learning through interactive exercises and video modeling.
+              </p>
+              <p className="mt-4 font-semibold text-[var(--foreground)]">
+                My role
+              </p>
+              <p className="text-[var(--muted)]">iOS Developer (Swift)</p>
+              <p className="mt-4 font-semibold text-[var(--foreground)]">
+                Responsibilities
+              </p>
+              <ul className="mt-2 list-inside list-disc space-y-1 text-[var(--muted)]">
+                <li>Built and maintained production iOS features</li>
+                <li>Implemented UI screens and user flows</li>
+                <li>Integrated backend APIs</li>
+                <li>Contributed to feature releases and bug fixes</li>
+                <li>Participated in App Store releases and maintenance</li>
+              </ul>
+              <p className="mt-4 font-semibold text-[var(--foreground)]">
+                Tech stack
+              </p>
+              <p className="text-[var(--muted)]">
+                Swift, UIKit/SwiftUI, REST APIs, App Store deployment workflow
+              </p>
+            </article>
+
+            {/* Speech Blubs Pro */}
+            <article
+              style={{ borderColor: "var(--accent-2)" }}
+              className="rounded-3xl border-2 bg-[var(--card)] p-6 transition-all duration-500 ease-out hover:opacity-95 sm:p-8"
+            >
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
+                <AppStoreIcon
+                  appId="1669028733"
+                  alt="Speech Blubs Pro app icon"
+                  className="h-24 w-24 shrink-0 rounded-[22%] object-cover shadow-md sm:h-28 sm:w-28"
+                />
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-baseline gap-2">
+                    <h3 className="font-display text-2xl font-bold sm:text-3xl">
+                      Speech Blubs Pro
+                    </h3>
+                    <span className="text-sm font-medium text-[var(--muted)]">
+                      Cross-platform App – Flutter
+                    </span>
+                  </div>
+                  <p className="mt-2 text-sm text-[var(--muted)]">
+                    Blub Blub
+                  </p>
+                  <a
+                    href="https://apps.apple.com/us/app/speech-blubs-pro-made-for-slps/id1669028733"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--accent)] transition-colors hover:underline"
+                  >
+                    View on App Store
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <p className="mt-4 text-lg leading-relaxed text-[var(--muted)]">
+                Speech Blubs Pro is a professional version of the Speech Blubs app designed for therapists and educators.
+              </p>
+              <p className="mt-4 font-semibold text-[var(--foreground)]">
+                My role
+              </p>
+              <p className="text-[var(--muted)]">Mobile Developer (Flutter)</p>
+              <p className="mt-4 font-semibold text-[var(--foreground)]">
+                Responsibilities
+              </p>
+              <ul className="mt-2 list-inside list-disc space-y-1 text-[var(--muted)]">
+                <li>Developed cross-platform features using Flutter</li>
+                <li>Implemented subscription and premium content flows</li>
+                <li>Built and maintained UI components</li>
+                <li>Collaborated with backend and product teams</li>
+                <li>Ensured stable production releases</li>
+              </ul>
+              <p className="mt-4 font-semibold text-[var(--foreground)]">
+                Tech stack
+              </p>
+              <p className="text-[var(--muted)]">
+                Flutter, Dart, REST APIs, state management, app store deployment
+              </p>
+            </article>
+
+            {/* Nimi Adventures - App Store lists as "Nimi Kids" */}
+            <article
+              style={{ borderColor: "var(--accent-3)" }}
+              className="rounded-3xl border-2 bg-[var(--card)] p-6 transition-all duration-500 ease-out hover:opacity-95 sm:p-8"
+            >
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
+                <AppStoreIcon
+                  appId="6502954339"
+                  alt="Nimi Kids app icon"
+                  className="h-24 w-24 shrink-0 rounded-[22%] object-cover shadow-md sm:h-28 sm:w-28"
+                />
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-baseline gap-2">
+                    <h3 className="font-display text-2xl font-bold sm:text-3xl">
+                      Nimi Adventures
+                    </h3>
+                    <span className="text-sm font-medium text-[var(--muted)]">
+                      Game App – Unity
+                    </span>
+                  </div>
+                  <p className="mt-2 text-sm text-[var(--muted)]">
+                    Blub Blub
+                  </p>
+                  <a
+                    href="https://apps.apple.com/us/app/nimi-kids-learning-games/id6502954339"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--accent)] transition-colors hover:underline"
+                  >
+                    View on App Store
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <p className="mt-4 text-lg leading-relaxed text-[var(--muted)]">
+                Nimi Adventures is an interactive educational game designed to engage children in playful learning experiences.
+              </p>
+              <p className="mt-4 font-semibold text-[var(--foreground)]">
+                My role
+              </p>
+              <p className="text-[var(--muted)]">Unity Developer</p>
+              <p className="mt-4 font-semibold text-[var(--foreground)]">
+                Responsibilities
+              </p>
+              <ul className="mt-2 list-inside list-disc space-y-1 text-[var(--muted)]">
+                <li>Implemented core gameplay systems</li>
+                <li>Built interactive UI elements</li>
+                <li>Integrated app navigation and progression logic</li>
+                <li>Contributed to production-ready builds</li>
+                <li>Collaborated with designers and product managers</li>
+              </ul>
+              <p className="mt-4 font-semibold text-[var(--foreground)]">
+                Tech stack
+              </p>
+              <p className="text-[var(--muted)]">
+                Unity, C#, mobile optimization, cross-platform deployment
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
       {/* Contact */}
       <section
