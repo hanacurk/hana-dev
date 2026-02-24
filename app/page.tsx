@@ -412,14 +412,15 @@ export default function Home() {
                     <h3 className="font-display text-2xl font-bold sm:text-3xl">
                       Speech Blubs
                     </h3>
-                    <span className="text-sm font-medium text-[var(--muted)]">
-                      iOS App – Swift
-                    </span>
+                    
                   </div>
                   <p className="mt-1 text-sm text-[var(--muted)]">
                     Blub Blub
                   </p>
                 </div>
+                <span className="text-sm font-medium text-[var(--muted)]">
+                      iOS App – Swift
+                    </span>
                 <svg
                   className={`h-6 w-6 shrink-0 text-[var(--muted)] transition-transform duration-300 ease-out sm:ml-2 ${expandedProjects.has(0) ? "rotate-180" : ""}`}
                   fill="none"
@@ -460,6 +461,7 @@ export default function Home() {
                     <ul className="mt-2 list-inside list-disc space-y-1 text-[var(--muted)]">
                       <li>Built and maintained production iOS features</li>
                       <li>Implemented UI screens and user flows</li>
+                      <li>Implemented subscription and premium content flows</li>
                       <li>Integrated backend APIs</li>
                       <li>Contributed to feature releases and bug fixes</li>
                       <li>Participated in App Store releases and maintenance</li>
@@ -496,14 +498,15 @@ export default function Home() {
                     <h3 className="font-display text-2xl font-bold sm:text-3xl">
                       Speech Blubs Pro
                     </h3>
-                    <span className="text-sm font-medium text-[var(--muted)]">
-                      Cross-platform App – Flutter
-                    </span>
+                   
                   </div>
                   <p className="mt-1 text-sm text-[var(--muted)]">
                     Blub Blub
                   </p>
                 </div>
+                <span className="text-sm font-medium text-[var(--muted)]">
+                      Cross-platform App – Flutter
+                    </span>
                 <svg
                   className={`h-6 w-6 shrink-0 text-[var(--muted)] transition-transform duration-300 ease-out sm:ml-2 ${expandedProjects.has(1) ? "rotate-180" : ""}`}
                   fill="none"
@@ -543,7 +546,6 @@ export default function Home() {
                     </p>
                     <ul className="mt-2 list-inside list-disc space-y-1 text-[var(--muted)]">
                       <li>Developed cross-platform features using Flutter</li>
-                      <li>Implemented subscription and premium content flows</li>
                       <li>Built and maintained UI components</li>
                       <li>Collaborated with backend and product teams</li>
                       <li>Ensured stable production releases</li>
@@ -580,14 +582,15 @@ export default function Home() {
                     <h3 className="font-display text-2xl font-bold sm:text-3xl">
                       Nimi Adventures
                     </h3>
-                    <span className="text-sm font-medium text-[var(--muted)]">
-                      Game App – Unity
-                    </span>
+                    
                   </div>
                   <p className="mt-1 text-sm text-[var(--muted)]">
                     Blub Blub
                   </p>
                 </div>
+                <span className="text-sm font-medium text-[var(--muted)]">
+                      Game App – Unity
+                    </span>
                 <svg
                   className={`h-6 w-6 shrink-0 text-[var(--muted)] transition-transform duration-300 ease-out sm:ml-2 ${expandedProjects.has(2) ? "rotate-180" : ""}`}
                   fill="none"
@@ -628,6 +631,7 @@ export default function Home() {
                     <ul className="mt-2 list-inside list-disc space-y-1 text-[var(--muted)]">
                       <li>Implemented core gameplay systems</li>
                       <li>Built interactive UI elements</li>
+                      <li>Implemented subscription and premium content flows</li>
                       <li>Integrated app navigation and progression logic</li>
                       <li>Contributed to production-ready builds</li>
                       <li>Collaborated with designers and product managers</li>
