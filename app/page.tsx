@@ -298,7 +298,7 @@ export default function Home() {
             about
           </p>
           <h2 className="mt-2 font-display text-3xl font-bold sm:text-4xl lg:text-5xl">
-            Mid developer, <br />
+            Mobile developer, <br />
             based in Ljubljana, Slovenia
           </h2>
           <div className="mt-8 grid gap-8 sm:mt-12 sm:gap-12 ">
