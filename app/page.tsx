@@ -72,27 +72,27 @@ export default function Home() {
             <a
               href="#about"
               onClick={(e) => scrollToSection(e, "about")}
-              className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
+              className="text-sm font-semibold text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
             >
               About
             </a>
             <a
               href="#skills"
               onClick={(e) => scrollToSection(e, "skills")}
-              className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
+              className="text-sm font-semibold text-[var(--muted)] transition-colors hover:text-[var(--accent-2)]"
             >
               Skills
             </a>
             <a
               href="#projects"
-              className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
+              className="text-sm font-semibold text-[var(--muted)] transition-colors hover:text-[var(--accent-3)]"
             >
               Projects
             </a>
             <a
               href="#contact"
               onClick={(e) => scrollToSection(e, "contact")}
-              className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
+              className="text-sm font-semibold text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
             >
               Contact
             </a>
@@ -101,9 +101,12 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               download="CV-Hana-Curk.pdf"
-              className="rounded-full bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:opacity-90 hover:scale-105"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:opacity-90 hover:scale-105"
             >
-              Download CV
+              View CV
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
             </Link>
           </div>
           <button
@@ -152,7 +155,7 @@ export default function Home() {
                   scrollToSection(e, "skills");
                   setMobileMenuOpen(false);
                 }}
-                className="mobile-menu-link rounded-xl px-5 py-3.5 text-base font-semibold text-[var(--muted)] transition-all duration-200 hover:bg-[var(--accent)]/10 hover:text-[var(--accent)] active:scale-[0.98]"
+                className="mobile-menu-link rounded-xl px-5 py-3.5 text-base font-semibold text-[var(--muted)] transition-all duration-200 hover:bg-[var(--accent-2)]/10 hover:text-[var(--accent-2)] active:scale-[0.98]"
               >
                 Skills
               </a>
@@ -162,7 +165,7 @@ export default function Home() {
                   scrollToSection(e, "projects");
                   setMobileMenuOpen(false);
                 }}
-                className="mobile-menu-link rounded-xl px-5 py-3.5 text-base font-semibold text-[var(--muted)] transition-all duration-200 hover:bg-[var(--accent)]/10 hover:text-[var(--accent)] active:scale-[0.98]"
+                className="mobile-menu-link rounded-xl px-5 py-3.5 text-base font-semibold text-[var(--muted)] transition-all duration-200 hover:bg-[var(--accent-3)]/10 hover:text-[var(--accent-3)] active:scale-[0.98]"
               >
                 Projects
               </a>
@@ -256,18 +259,8 @@ export default function Home() {
                 className="group inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-5 py-3 font-semibold text-white shadow-lg transition-all hover:opacity-90 hover:scale-105 sm:px-7 sm:py-3.5"
               >
                 View CV
-                <svg
-                  className="h-4 w-4 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
+                <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </Link>
               <a
@@ -303,7 +296,7 @@ export default function Home() {
           </h2>
           <div className="mt-8 grid gap-8 sm:mt-12 sm:gap-12 ">
             <p className="text-lg leading-relaxed text-[var(--muted)]">
-            I studied on Faculty of Computer and information sciences, where I gained a lot of technical knowledge and practical experiences. While studying I also worked on personal projects and some student jobs in the field of computer science. I developed a few websites, some using wordpress and some with react, nextjs or just vanilla js. After college I was working as a mobile developer for almost 4 years. I gained a lot of experience with product oriented work and working with a team, as well as using AI in my work process.
+            I studied on Faculty of Computer and information sciences, where I gained a lot of technical knowledge and practical experiences. While studying I also worked on personal projects and some student jobs in the field of computer science. I developed a few websites, some using wordpress and some with react, nextjs or just vanilla js. After college I was working as a mobile developer for almost 4 years. I gained a lot of experience with product oriented work and working with a team.
             </p>
           </div>
         </div>
@@ -470,7 +463,7 @@ export default function Home() {
                       Tech stack
                     </p>
                     <p className="text-[var(--muted)]">
-                      Swift, UIKit/SwiftUI, REST APIs, App Store deployment workflow
+                      Swift, UIKit/SwiftUI, REST APIs, Cross-platform deployment
                     </p>
                   </div>
                 </div>
@@ -554,7 +547,7 @@ export default function Home() {
                       Tech stack
                     </p>
                     <p className="text-[var(--muted)]">
-                      Flutter, Dart, REST APIs, state management, app store deployment
+                      Flutter, Dart, REST APIs, App Store deployment
                     </p>
                   </div>
                 </div>
@@ -640,7 +633,7 @@ export default function Home() {
                       Tech stack
                     </p>
                     <p className="text-[var(--muted)]">
-                      Unity, C#, mobile optimization, cross-platform deployment
+                      Unity, C#, Mobile optimization, App Store deployment
                     </p>
                   </div>
                 </div>
