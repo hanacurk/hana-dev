@@ -72,27 +72,27 @@ export default function Home() {
             <a
               href="#about"
               onClick={(e) => scrollToSection(e, "about")}
-              className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
+              className="text-sm font-semibold text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
             >
               About
             </a>
             <a
               href="#skills"
               onClick={(e) => scrollToSection(e, "skills")}
-              className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent-2)]"
+              className="text-sm font-semibold text-[var(--muted)] transition-colors hover:text-[var(--accent-2)]"
             >
               Skills
             </a>
             <a
               href="#projects"
-              className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent-3)]"
+              className="text-sm font-semibold text-[var(--muted)] transition-colors hover:text-[var(--accent-3)]"
             >
               Projects
             </a>
             <a
               href="#contact"
               onClick={(e) => scrollToSection(e, "contact")}
-              className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
+              className="text-sm font-semibold text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
             >
               Contact
             </a>
@@ -463,7 +463,7 @@ export default function Home() {
                       Tech stack
                     </p>
                     <p className="text-[var(--muted)]">
-                      Swift, UIKit/SwiftUI, REST APIs, App Store deployment workflow
+                      Swift, UIKit/SwiftUI, REST APIs, Cross-platform deployment
                     </p>
                   </div>
                 </div>
@@ -547,7 +547,7 @@ export default function Home() {
                       Tech stack
                     </p>
                     <p className="text-[var(--muted)]">
-                      Flutter, Dart, REST APIs, state management, app store deployment
+                      Flutter, Dart, REST APIs, App Store deployment
                     </p>
                   </div>
                 </div>
@@ -633,7 +633,7 @@ export default function Home() {
                       Tech stack
                     </p>
                     <p className="text-[var(--muted)]">
-                      Unity, C#, mobile optimization, cross-platform deployment
+                      Unity, C#, Mobile optimization, App Store deployment
                     </p>
                   </div>
                 </div>
