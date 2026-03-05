@@ -245,7 +245,7 @@ export default function Home() {
               Hana
             </h1>
             <p className="mt-4 font-display text-xl font-semibold text-[var(--muted)] sm:mt-6 sm:text-2xl lg:text-3xl">
-              I build clean, intuitive apps
+              App developer
             </p>
             <p className="mt-4 text-lg leading-relaxed text-[var(--muted)]">
               Swift, Flutter, Unity & modern web.
@@ -296,7 +296,7 @@ export default function Home() {
           </h2>
           <div className="mt-8 grid gap-8 sm:mt-12 sm:gap-12 ">
             <p className="text-lg leading-relaxed text-[var(--muted)]">
-            I studied on Faculty of Computer and information sciences, where I gained a lot of technical knowledge and practical experiences. While studying I also worked on personal projects and some student jobs in the field of computer science. I developed a few websites, some using wordpress and some with react, nextjs or just vanilla js. After college I was working as a mobile developer for almost 4 years. I gained a lot of experience with product oriented work and working with a team.
+            I studied at Faculty of Computer and information sciences, where I gained a lot of technical knowledge and practical experiences. While studying I also worked on personal projects and some student jobs in the field of computer science. I developed a few websites, some using wordpress and some with react, nextjs or just vanilla js. After college I was working as a mobile developer for almost 4 years. I gained a lot of experience with product oriented work and working with a team.
             </p>
           </div>
         </div>
