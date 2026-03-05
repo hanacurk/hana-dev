@@ -691,7 +691,7 @@ export default function Home() {
               >
                 <div className="min-h-0 overflow-hidden">
                   <div className="mt-4 border-t border-[var(--card-border)] pt-4">
-                  <a
+                    <a
                       href="https://github.com/hanacurk/cycle-app"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -702,6 +702,35 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
+                    <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                      <div className="overflow-hidden rounded-2xl bg-[var(--card-border)]/40">
+                        <Image
+                          src="/CycleApp1.png"
+                          alt="CycleTracker home screen"
+                          width={400}
+                          height={800}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                      <div className="overflow-hidden rounded-2xl bg-[var(--card-border)]/40">
+                        <Image
+                          src="/CycleApp2.png"
+                          alt="CycleTracker calendar and cycle overview"
+                          width={400}
+                          height={800}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                      <div className="overflow-hidden rounded-2xl bg-[var(--card-border)]/40">
+                        <Image
+                          src="/CycleApp3.png"
+                          alt="CycleTracker phase tips and suggestions"
+                          width={400}
+                          height={800}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    </div>
                     <p className="mt-4 text-lg leading-relaxed text-[var(--muted)]">
                       CycleTracker is a period-tracking app designed around the different phases of the menstrual cycle.
                       I originally wanted a desktop app that could give me suggestions for each phase, then turned
