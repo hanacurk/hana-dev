@@ -651,15 +651,13 @@ export default function Home() {
                 className="flex w-full cursor-pointer flex-col gap-4 text-left sm:flex-row sm:items-center sm:gap-6"
                 aria-expanded={expandedProjects.has(3)}
               >
-                <div className="flex shrink-0 items-center justify-center">
-                  <Image
-                    src="/CycleTracker-icon.png"
-                    alt="CycleTracker app icon"
-                    width={112}
-                    height={112}
-                    className="h-24 w-24 rounded-[22%] object-cover shadow-md sm:h-28 sm:w-28"
-                  />
-                </div>
+                <Image
+                  src="/CycleTracker-icon.png"
+                  alt="CycleTracker app icon"
+                  width={112}
+                  height={112}
+                  className="h-24 w-24 shrink-0 rounded-[22%] object-cover shadow-md sm:h-28 sm:w-28"
+                />
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-baseline gap-2">
                     <h3 className="font-display text-2xl font-bold sm:text-3xl">
@@ -702,7 +700,28 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
-                    <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+
+                    <p className="mt-4 text-lg leading-relaxed text-[var(--muted)]">
+                      CycleTracker is a period-tracking app designed around the different phases of the menstrual cycle.
+                      I originally wanted a desktop app that could give me suggestions for each phase, then turned
+                      it into a native iOS experience.
+                    </p>
+                    <p className="mt-4 font-semibold text-[var(--foreground)]">
+                    What I built
+                    </p>
+                    <ul className="mt-2 list-inside list-disc space-y-1 text-[var(--muted)]">
+                      <li>Designed the concept and UI — phase-colored themes, custom SwiftUI blob characters with expressions.</li>
+                      <li>Built phase-aware content system with daily quotes, suggestions, food and recipe recommendations loaded from a local JSON</li>
+                      <li>Implemented cycle phase calculations and calendar view with connected period day indicators</li>
+                      <li>Persisted all cycle data locally with SwiftData, structured for future CloudKit sync across iPhone and Mac</li>
+                    </ul>
+                    <p className="mt-4 font-semibold text-[var(--foreground)]">
+                      Tech stack
+                    </p>
+                    <p className="text-[var(--muted)]">
+                      Swift, SwiftUI, Warp (AI-assisted code generation), Claude (UI design & content)
+                    </p>
+                    <div className="mt-8 grid max-w-lg grid-cols-1 gap-3 sm:grid-cols-3">
                       <div className="overflow-hidden rounded-2xl bg-[var(--card-border)]/40">
                         <Image
                           src="/CycleApp1.png"
@@ -731,26 +750,6 @@ export default function Home() {
                         />
                       </div>
                     </div>
-                    <p className="mt-4 text-lg leading-relaxed text-[var(--muted)]">
-                      CycleTracker is a period-tracking app designed around the different phases of the menstrual cycle.
-                      I originally wanted a desktop app that could give me suggestions for each phase, then turned
-                      it into a native iOS experience.
-                    </p>
-                    <p className="mt-4 font-semibold text-[var(--foreground)]">
-                    What I built
-                    </p>
-                    <ul className="mt-2 list-inside list-disc space-y-1 text-[var(--muted)]">
-                      <li>Designed the concept and UI — phase-colored themes, custom SwiftUI blob characters with expressions.</li>
-                      <li>Built phase-aware content system with daily quotes, suggestions, food and recipe recommendations loaded from a local JSON</li>
-                      <li>Implemented cycle phase calculations and calendar view with connected period day indicators</li>
-                      <li>Persisted all cycle data locally with SwiftData, structured for future CloudKit sync across iPhone and Mac</li>
-                    </ul>
-                    <p className="mt-4 font-semibold text-[var(--foreground)]">
-                      Tech stack
-                    </p>
-                    <p className="text-[var(--muted)]">
-                      Swift, SwiftUI, Warp (AI-assisted code generation), Claude (UI design & content)
-                    </p>
                   </div>
                 </div>
               </div>
