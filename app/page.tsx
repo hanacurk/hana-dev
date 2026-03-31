@@ -65,9 +65,9 @@ export default function Home() {
 {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-8 sm:py-5">
-          <span className="font-display text-xl font-bold tracking-tight">
+          <a href="#hero" className="font-display text-xl font-bold tracking-tight">
             Hana Čurk
-          </span>
+          </a>
           <div className="hidden items-center gap-10 sm:flex">
             <a
               href="#about"
@@ -197,7 +197,7 @@ export default function Home() {
         )}
       </nav>
       {/* Hero - decorative illustrations only in this section, scroll away with it */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pt-20 sm:px-8 sm:pt-24">
+      <section id="hero" className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pt-20 sm:px-8 sm:pt-24">
         {/* Decorative illustrations - fixed, stay in viewport top; only visible when hero is on screen */}
         <div className="pointer-events-none absolute inset-0 z-0">
           <div className="absolute right-16 top-32 text-[var(--accent)]">

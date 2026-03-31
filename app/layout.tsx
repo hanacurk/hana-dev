@@ -10,11 +10,11 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Hana Curk | Mobile & Frontend Developer",
+  title: "Hana Čurk",
   description:
     "Mobile and frontend developer focused on building clean, intuitive apps using SwiftUI, Flutter, Unity, and modern web technologies.",
   openGraph: {
-    title: "Hana Curk | Mobile & Frontend Developer",
+    title: "Hana Čurk",
     description:
       "Building clean, intuitive apps with SwiftUI, Flutter, Unity, and modern web technologies.",
   },
